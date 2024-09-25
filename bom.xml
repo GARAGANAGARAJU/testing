@@ -1,0 +1,24 @@
+#!/bin/bash
+
+# Example script to generate bom.xml
+# Path to OWASP Dependency-Check report
+REPORT_PATH="reports/dependency-check-report.xml"
+
+# Path to the output bom.xml
+BOM_PATH="reports/bom.xml"
+
+# Function to generate bom.xml from OWASP report
+generate_bom() {
+    echo '<?xml version="1.0" encoding="UTF-8"?>' > $BOM_PATH
+    echo '<bom xmlns="http://cyclonedx.org/schema/bom/1.4" version="1.4">' >> $BOM_PATH
+    echo '    <components>' >> $BOM_PATH
+
+    # Parse the OWASP report and add components (you would need to implement this)
+    # This is a placeholder for your parsing logic
+
+    echo '    </components>' >> $BOM_PATH
+    echo '</bom>' >> $BOM_PATH
+}
+
+# Run the function
+generate_bom
